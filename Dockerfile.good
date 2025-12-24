@@ -17,6 +17,8 @@ USER airflow
 
 WORKDIR /opt/airflow
 
+VOLUME ["/opt/airflow/logs"]
+
 # Fix 4: Оптимизация слоев. Сначала зависимости (меняются редко)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
